@@ -7,6 +7,9 @@ class LoginPage:
     PASSWORD_INPUT = (By.CSS_SELECTOR, "input[name='password']")
     LOGIN_BTN = (By.XPATH, "//button[text()='Login']")
     SIGN_OUT_BTN = (By.XPATH,"//*[text()='Sign Out']")
+    ABOUT_BUT = (By.CSS_SELECTOR, "a[href='/about']")
+    LOGIN_HEADER_BTN = (By.CSS_SELECTOR, "a[href='/login']")
+
 
     def __init__(self, driver):
         self.driver = driver
@@ -25,3 +28,9 @@ class LoginPage:
 
     def submit_login(self):
         self.driver.find_element(*self.LOGIN_BTN).click()
+
+    def about(self):
+        self.driver.find_element(*self.ABOUT_BUT).click()
+
+    def login_header_btn(self):
+        self.driver.find_element(*self.LOGIN_HEADER_BTN).click()
